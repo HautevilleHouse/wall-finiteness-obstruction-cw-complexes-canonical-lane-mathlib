@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.WallFinitenessObstructionCwComplexesCanonicalLaneLean.CWComplex
+import HautevilleHouse.WallFinitenessObstructionCwComplexesCanonicalLaneLean.FinitenessObstructionEvidence
+import HautevilleHouse.WallFinitenessObstructionCwComplexesCanonicalLaneLean.ChainComplexControl
+
+namespace HautevilleHouse
+namespace WallFinitenessObstructionCwComplexesCanonicalLaneLean
+
+def bridgeClosed (A : AdmissibleClass) : Prop :=
+  FinitenessObstructionClosed A.object.cwComplex A.object.finitenessCondition A.object.wallObstruction
+
+theorem bridge_from_admissible_class (A : AdmissibleClass) : bridgeClosed A := by
+  exact A.object.evidence.finitenessObstructionClosed
+
+end WallFinitenessObstructionCwComplexesCanonicalLaneLean
+end HautevilleHouse
